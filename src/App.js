@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Articles from './components/Articles'
+import User from './components/User'
 
 function App() {
+
+  const [mode, setMode] = useState(null);
+
+
+  const setmode = () => {
+    console.log(mode);
+    if (mode === null) {
+      setMode('dark')
+    } else {
+      setMode(null);
+    }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='nav' >
+        <header>
+          <h1>React Skeletons</h1>
+          <button className="btn" onClick={setmode}>{!mode ? 'go dark mode' : 'go light mode!'}</button>
+        </header>
+      </div>
+      <div className="content">
+        <Articles mode={mode} />
+        <User mode={mode} />
+      </div>
     </div>
   );
 }
