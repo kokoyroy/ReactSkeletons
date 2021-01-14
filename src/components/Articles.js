@@ -10,7 +10,7 @@ export default function Articles(props) {
             fetch('https://jsonplaceholder.typicode.com/posts')
                 .then(res => res.json()).then(res => setArticle(res))
         }
-            , 2000)
+            , 15000)
     }, [])
 
     return (
