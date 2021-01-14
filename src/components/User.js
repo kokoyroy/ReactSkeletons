@@ -9,7 +9,7 @@ export default function User(props) {
             fetch('https://jsonplaceholder.typicode.com/users/1')
                 .then(res => res.json()).then(res => setProfile(res))
         }
-            , 3000)
+            , 10000)
     }, [])
     return (
         <div className='user'>
