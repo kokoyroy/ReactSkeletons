@@ -5,7 +5,6 @@ import User from './components/User'
 function App() {
 
   const [mode, setMode] = useState(null);
-// just a useless comment
 
   const setmode = () => {
     console.log(mode);
